@@ -5,11 +5,12 @@ public class Car {
     double mpg;
     double gasTankCapacity;
     double gasRemaining;
+    double range;
     public Car(String model, double mpg, double gasTankCapacity) {
     this.model = model;
     this.mpg = mpg;
     this.gasTankCapacity = gasTankCapacity;
-    gasRemaining = gasTankCapacity;
+    
     
     }
 
@@ -51,11 +52,13 @@ public class Car {
         // drive for distance (in miles), and update gas tank level accordingly (using mpg)
       
       gasRemaining = gasTankCapacity - (distance / mpg);
+      getRange();
     }
 
     public void refuel(double gasAmount) {
         // Add gasAmount of gas to the gas tank
       gasRemaining = gasRemaining + gasAmount; 
+      getRange();
     }
 
     public double getGasRemaining() {
@@ -65,7 +68,7 @@ public class Car {
 
     public double getRange() {
         // Return the estimated amount of miles the car can drive based on current gas remaining and MPG (provided to constructor) 
-       double range;
+       
       range = gasRemaining * mpg;
       return range;
     }
@@ -73,6 +76,6 @@ public class Car {
     public String toString() {
         // Return a string representation of the car's current state.
         // Be sure to include range, model, and gas level.
-      return "getRange + model + getGasRemaining"; 
+    return "range = " + getRange() + " model = " + model + " gas remaining = " + gasRemaining; 
     }
 }
