@@ -53,6 +53,7 @@ public class Car {
       
       gasRemaining = gasTankCapacity - (distance / mpg);
       getRange();
+      getGasRemaining();
     }
 
     public void refuel(double gasAmount) {
