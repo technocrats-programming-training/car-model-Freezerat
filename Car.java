@@ -51,7 +51,7 @@ public class Car {
     public void drive(double distance) {
         // drive for distance (in miles), and update gas tank level accordingly (using mpg)
       
-      gasRemaining = gasTankCapacity - (distance / mpg);
+      gasRemaining = gasRemaining - (distance / mpg);
       getRange();
       getGasRemaining();
     }
